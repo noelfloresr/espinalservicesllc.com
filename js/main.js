@@ -78,8 +78,8 @@
     var form = document.getElementById("contact-form");
     if (!form) return;
     form.addEventListener("submit", function (e) {
-      var honeypot = form.querySelector('input[name="_honey"]');
-      if (honeypot && honeypot.value) {
+      var honeypot = form.querySelector('input[name="botcheck"]');
+      if (honeypot && honeypot.checked) {
         e.preventDefault();
         return;
       }

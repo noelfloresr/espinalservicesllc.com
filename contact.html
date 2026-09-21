@@ -142,15 +142,11 @@
         <p class="section-lede lang-en">Fields marked with an asterisk (*) are required.</p>
         <p class="section-lede lang-es" hidden>Los campos marcados con un asterisco (*) son obligatorios.</p>
 
-        <form id="contact-form" class="form-grid mt-md" action="https://formsubmit.co/espinalservices1@gmail.com" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New message from espinalservicesllc.com">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="hidden" name="_next" value="https://espinalservicesllc.com/thank-you">
-          <div class="honeypot-field" aria-hidden="true">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="_honey" tabindex="-1" autocomplete="off">
-          </div>
+        <form id="contact-form" class="form-grid mt-md" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="5e729c09-1a79-41b3-9d16-6b6b93c93808">
+          <input type="hidden" name="subject" value="New message from espinalservicesllc.com">
+          <input type="hidden" name="redirect" value="https://espinalservicesllc.com/thank-you">
+          <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-row-2">
             <div class="field">

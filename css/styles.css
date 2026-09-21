@@ -674,7 +674,16 @@ html[data-lang="es"] .lang-en { display: none !important; }
   .footer-inner { grid-template-columns: 1.3fr 1fr 1fr 1fr; }
 }
 .footer-brand { display: flex; flex-direction: column; gap: 1rem; }
+.footer-brand-mark { display: flex; align-items: center; gap: 0.65rem; }
 .footer-brand img { height: 46px; width: auto; }
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  line-height: 1.15;
+}
+.footer-brand-name span { display: block; font-family: var(--font-body); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: #d8b96a; }
 .footer-brand p { color: #b6b1a6; font-size: 0.95rem; }
 .footer-col h2 {
   font-family: var(--font-body);

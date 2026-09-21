@@ -16,8 +16,10 @@ thank-you.html      Post-submission confirmation
 css/styles.css      Shared stylesheet
 js/main.js           Mobile nav, EN/ES language toggle, form handling
 images/              Optimized site images and icons
-robots.txt, sitemap.xml, site.webmanifest, CNAME
+robots.txt, sitemap.xml, site.webmanifest
 ```
+
+Pages are linked with clean URLs (`/services`, not `/services.html`) — see **Deployment** below for the hosting setting this depends on.
 
 ## Features
 
@@ -36,6 +38,8 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The `CNAME` file is set up for GitHub Pages with the custom domain `espinalservicesllc.com`. To go live: enable GitHub Pages on this repo (Settings → Pages → deploy from `main`), then point the domain's DNS to GitHub Pages per [GitHub's custom domain docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+Hosted on **Cloudflare Pages**, connected to this repo (build command: none — static site, output directory: `/`). Cloudflare Pages defaults to `html_handling: auto-trailing-slash`, which serves `services.html` at the clean URL `/services` and 301-redirects `/services.html` → `/services` automatically — no `_redirects` file needed. Confirm this setting is on under the Pages project's build settings if clean URLs ever stop resolving.
+
+Once the Pages project exists, add `espinalservicesllc.com` as a custom domain in the Pages project settings (Cloudflare will handle DNS automatically if the domain's nameservers are already on Cloudflare).
 
 The contact form submits via [FormSubmit.co](https://formsubmit.co) to `espinalservices1@gmail.com` — the first live submission triggers a one-time confirmation email that must be clicked to activate it.

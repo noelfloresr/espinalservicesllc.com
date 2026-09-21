@@ -615,6 +615,30 @@ html[data-lang="es"] .lang-en { display: none !important; }
 }
 .map-embed iframe { width: 100%; height: 280px; border: 0; display: block; }
 
+.review-cta {
+  margin-top: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+.review-cta img {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-line);
+}
+.review-cta-text h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+.review-cta-text p { color: var(--color-ink-soft); font-size: 0.92rem; }
+.review-cta-text .card-link { margin-top: 0.6rem; }
+@media (max-width: 480px) {
+  .review-cta { flex-direction: column; align-items: flex-start; }
+}
+
 /* ---------- Forms ---------- */
 .form-grid { display: grid; gap: 1.25rem; }
 @media (min-width: 640px) {

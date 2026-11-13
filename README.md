@@ -9,6 +9,7 @@ Static HTML/CSS/JS site, no build step or dependencies required.
 ```
 index.html        Home
 services.html      Our Services (all 7 offerings, with anchors)
+referral-guide.html Community Referral Guide for nonprofits/agencies (printable)
 about.html         About / values / service area
 contact.html        Contact info, map, and message form
 thank-you.html      Post-submission confirmation

@@ -100,8 +100,15 @@
     });
   }
 
+  function initPrint() {
+    document.querySelectorAll("[data-print]").forEach(function (btn) {
+      btn.addEventListener("click", function () { window.print(); });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initLang();
+    initPrint();
     initNav();
     initYear();
     initForm();

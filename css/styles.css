@@ -780,3 +780,115 @@ html[data-lang="es"] .lang-en { display: none !important; }
   display: flex;
   align-items: center;
 }
+
+/* ---------- Community Referral Guide ---------- */
+.referral-section { padding-block: clamp(2rem, 4vw, 3rem); scroll-margin-top: 90px; }
+.referral-section + .referral-section { border-top: 1px solid var(--color-line); }
+
+.glance-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .glance-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .glance-grid { grid-template-columns: repeat(4, 1fr); } }
+.glance-item {
+  background: var(--color-cream);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+}
+.glance-item dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin-bottom: 0.4rem;
+}
+.glance-item dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+.glance-item a { text-decoration: none; }
+.glance-item a:hover { text-decoration: underline; }
+
+.not-provided {
+  border: 2px solid var(--color-error-text);
+  border-left-width: 8px;
+  border-radius: var(--radius-md);
+  background: var(--color-error-bg);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.not-provided-head { display: flex; gap: 1rem; align-items: flex-start; }
+.not-provided-head svg { flex-shrink: 0; color: var(--color-error-text); margin-top: 0.35rem; }
+.not-provided-head h2 { color: var(--color-error-text); margin-bottom: 0.4rem; }
+.notario-notice {
+  margin-top: 1.25rem;
+  background: var(--color-white);
+  border: 1px solid #e3b9b9;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem;
+  max-width: none;
+}
+.not-provided-list { display: grid; gap: 0.85rem; margin-top: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 840px) { .not-provided-list { grid-template-columns: repeat(2, 1fr); } }
+.not-provided-list li {
+  background: var(--color-white);
+  border: 1px solid #e3b9b9;
+  border-radius: var(--radius-sm);
+  padding: 0.9rem 1.1rem 0.9rem 2.6rem;
+  position: relative;
+}
+.not-provided-list li::before {
+  content: "\2715";
+  position: absolute;
+  left: 1rem;
+  top: 0.9rem;
+  font-weight: 700;
+  color: var(--color-error-text);
+}
+.not-provided-list strong { display: block; margin-bottom: 0.25rem; }
+.not-provided-list span { color: var(--color-ink-soft); font-size: 0.95rem; }
+
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.referral-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+}
+.referral-table th, .referral-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.95rem;
+}
+.referral-table thead th {
+  background: var(--color-cream);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+.referral-table tbody th { font-weight: 700; width: 28%; }
+.referral-table tbody th a { text-decoration: none; }
+.referral-table tbody th a:hover { text-decoration: underline; }
+.referral-table td { color: var(--color-ink-soft); }
+.referral-table td:last-child { font-weight: 700; color: var(--color-ink); width: 24%; }
+
+/* Unfilled owner-supplied values: deliberately loud so they are not published by accident. */
+.confirm { background: #fff3c4; outline: 2px dashed #b08900; padding: 0 0.25rem; }
+
+.referral-bullets { display: grid; gap: 0.75rem; padding-left: 1.2rem; list-style: disc; }
+.referral-bullets li { max-width: 80ch; }
+.referral-steps { display: grid; gap: 1rem; padding-left: 1.4rem; list-style: decimal; }
+.referral-steps li::marker { font-weight: 700; color: var(--color-gold-deep); }
+.referral-steps li { max-width: 80ch; }
+.referral-steps strong { display: block; margin-bottom: 0.2rem; }
+.referral-steps span { color: var(--color-ink-soft); }
+
+@media print {
+  .site-header, .site-footer, .skip-link, .no-print { display: none !important; }
+  body { font-size: 11pt; }
+  section, .referral-section, .page-hero { padding-block: 0.6rem; background: none; }
+  .not-provided, .referral-table tr, .glance-item { break-inside: avoid; }
+  a { text-decoration: none; }
+  .table-scroll { overflow: visible; }
+  .referral-table { min-width: 0; }
+}

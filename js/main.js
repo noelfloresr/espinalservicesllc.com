@@ -100,8 +100,36 @@
     });
   }
 
+  function initPrint() {
+    document.querySelectorAll("[data-print]").forEach(function (btn) {
+      btn.addEventListener("click", function () { window.print(); });
+    });
+  }
+
+  function initCopyLink() {
+    var status = document.querySelector("[data-copy-status]");
+    document.querySelectorAll("[data-copy-link]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var canonical = document.querySelector('link[rel="canonical"]');
+        var url = canonical ? canonical.href : window.location.href;
+        var es = document.documentElement.getAttribute("data-lang") === "es";
+        function show(msg) { if (status) status.textContent = msg; }
+        // Show the URL immediately so the visitor always has it, even if the
+        // clipboard API is unavailable, blocked, or never settles.
+        show((es ? "Copie este enlace: " : "Copy this link: ") + url);
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () {
+            show((es ? "Enlace copiado: " : "Link copied: ") + url);
+          }, function () { /* keep the visible URL */ });
+        }
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initLang();
+    initPrint();
+    initCopyLink();
     initNav();
     initYear();
     initForm();
